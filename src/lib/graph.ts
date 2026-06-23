@@ -91,7 +91,7 @@ function createLLM(config: ResearchConfig): BaseChatModel {
     case 'gemini':
       if (!config.geminiKey) throw new Error('Google Gemini API key is required');
       return new ChatGoogleGenerativeAI({
-        modelName: config.llmModel || 'gemini-1.5-flash',
+        model: config.llmModel || 'gemini-1.5-flash',
         apiKey: config.geminiKey,
         temperature: 0.3,
       });
